@@ -1,0 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    height: 55px;
+    background-color: #191D3A;
+    padding: 15px;
+}
+.inner_c{
+    width: 1000px;
+    margin: 0 auto; /*让导航条、内容区域等部分的版心在父亲里居中*/
+}
+.login{
+    background-image: url(../img/backmoun2.jpg);
+    background-position: center;
+}
+
+.header .logo{
+    float: left;
+}
+.header .nav{
+    float: right;
+}
+.banner{
+    
+}
+.box{
+    font-size: 25px;
+    font-weight: bold;
+    height: 561px;
+}
+.logo{
+
+}
+.png{
+
+}
+.input{
+    width: 500px;
+    height: 550px;
+    margin: 0 250px;
+    font-family: 'Times New Roman','YouYuan';
+    text-align: center;
+    padding-top: 240px;
+    
+}
+.log{
+
+}
+.name{
+ height:45x;
+}
+.pwd{
+    height: 45px;
+}
+.submit{
+    font-family: "YouYuan";
+    font-size: 25px;
+
+}
+.text{
+    font-family: 'Times New Roman','YouYuan';
+    font-size: 20px;
+    border: 1px solid;
+}
+.header a{
+    /* display: block;将超链接转为块儿，可以保证其霸占父亲的整行*/
+    font-size: 20px;
+    height: 58px;
+    text-decoration: none; /*去掉超链的下划线*/
+    color:#818496;
+    text-align: center;  /*让这个div内部的文本居中*/
+    font-family: 'Times New Roman','YouYuan';
+}
+
+a:link{
+    color:white;
+    
+}
+/*超链接点击之后*/
+a:visited{
+    color:white;
+}
+/*鼠标悬停，放到标签上的时候*/
+a:hover{
+    color:rgb(1, 194, 253);
+}
+/*鼠标点击链接，但是不松手的时候*/
+a:active{
+    color:rgb(0, 10, 116);
+}
+.l-wrap{
+    height: 561px;
+    padding-top: 30px;
+}   
+#container{
+    height:500px;
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid rgb(0, 0, 0);
+    color: #fff;
+    border-radius: 10px;
+}  

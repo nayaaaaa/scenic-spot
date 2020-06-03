@@ -52,7 +52,7 @@
 
 <mvc:default-servlet-handler/>
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
-	<property name = "prefix" value = "/WEB-INF/web/"/>
+	<property name = "prefix" value = "/WEB-INF/web"/>
 	<property name = "suffix" value = ".jsp"/>
 </bean>
 </beans>

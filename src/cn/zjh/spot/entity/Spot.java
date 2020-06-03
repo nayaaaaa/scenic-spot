@@ -12,6 +12,9 @@ public class Spot {
     private Float positiony;
 	private Date update;
 	private Integer hitnum;
+	private String city;
+	private String district;
+
 	public Integer getId() {
 		return id;
 	}
@@ -66,5 +69,16 @@ public class Spot {
 	public void setHitnum(Integer hitnum) {
 		this.hitnum = hitnum;
 	}
-	
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getDistrict() {
+		return district;
+	}
+	public void setDistrict(String district) {
+		this.district = district;
+	}
 }

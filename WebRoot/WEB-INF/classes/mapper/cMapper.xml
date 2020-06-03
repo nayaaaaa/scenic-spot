@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.zjh.spot.dao.CommentDao">
-<insert id=""></insert>
-<delete id=""></delete>
-<select id=""></select>
-<update id=""></update>
-
+<insert id="addcomment" parameterType="Comment">
+    insert into comment ( id,uid,sid,content,upnum,name,adate ) values (#{id},#{uid},#{sid},#{content},#{upnum},#{name},#{adate})
+</insert>
+<delete id="delete">
+    delete from comment where id=#{id}
+</delete>
+<select id="getcomment" resultType="Comment">
+    select * from comment where id=#{id}
+</select>
+<select id="getspot" resultType="Comment">
+    select * from comment where sid=#{sid}
+</select>
+<select id="getuser" resultType="Comment">
+    select * from comment where uid=#{uid}
+</select>
 </mapper>

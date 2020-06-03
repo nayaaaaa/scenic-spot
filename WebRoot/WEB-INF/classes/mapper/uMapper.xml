@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.zjh.spot.dao.UserDao">
-<insert id=""></insert>
-<delete id=""></delete>
-<select id=""></select>
-<update id=""></update>
+<insert id="adduser" parameterType="User">
+    insert into user(uid,name,pwd,role) values(#{uid},#{name},#{pwd},#{role})
+</insert>
+<select id="getuser" resultType="User">
+    select * from user
+	<where>uid=#{s1} and pwd=#{s2}</where>
+</select>
+<select id="getid" resultType="User">
+    select * from user
+	<where>uid=#{i1}</where>
+</select>
+<select id="countofUser" resultType="Long">
+	select count(*) from user
+</select>
+<select id="menulist" resultType="Cmenu">
+	select * from Cmenu where pid=${id}
+</select>
+<update id="updateuser" parameterType="User">
+    update user set name=#{name},pwd=#{pwd} where uid=#{uid}
+</update>
+
 </mapper>

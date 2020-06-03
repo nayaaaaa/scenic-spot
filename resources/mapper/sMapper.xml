@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.zjh.spot.dao.SpotDao">
-<insert id=""></insert>
-<delete id=""></delete>
-<select id=""></select>
-<update id=""></update>
-
+<insert id="addspot" parameterType="Spot">
+    insert into spot (title,content,tjdate,cruser,positionx,positiony,hitnum,city,district ) values (#{title},#{content},#{tjdate},#{cruser},#{positionx},#{positiony},#{hitnum},#{city},#{district})
+</insert>
+<delete id="delete">
+    delete from spot where id=#{id}
+</delete>
+<select id="getspot" resultType="Spot">
+    select * from spot where id=#{id}
+</select>
+<select id="listpage" resultType="Spot">
+    select * from spot order by id desc limit ${offset},${rows}
+</select>
+<select id="allspot" resultType="Spot">
+    select * from spot
+</select>
+<update id="update" parameterType="Spot">
+    update spot set title=#{title},content=#{content},cruser=#{cruser},hitnum=#{hitnum} where id=#{id}
+</update>
+<update id="uphitnum" parameterType="Spot">
+    update spot set hitnum=#{hitnum} where id=#{id}
+</update>
+<select id="listtitle" resultType="Spot">
+    select * from spot
+	<where>
+		title like '%${s1}%'
+	</where>
+	order by id desc limit ${offset},${rows}
+</select>
+<select id="listcity" resultType="Spot">
+    select * from spot
+	<where>
+		city=#{c1}
+	</where>
+	order by id desc limit ${offset},${rows}
+</select>
+<select id="listdistrict" resultType="Spot">
+    select * from spot
+	<where>
+		district=#{d1}
+	</where>
+	order by id desc limit ${offset},${rows}
+</select>
+<select id="countofSpot" resultType="Long">
+	select count(*) from spot
+</select>
 </mapper>

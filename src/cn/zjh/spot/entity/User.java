@@ -4,7 +4,7 @@ public class User {
     private String uid;
 	private String name;
 	private String pwd;
-	private String role;
+	private int role;
 	public String getUid() {
 		return uid;
 	}
@@ -23,11 +23,12 @@ public class User {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public String getRole() {
+	public int getRole() {
 		return role;
 	}
-	public void setRole(String role) {
+	public void setRole(int role) {
 		this.role = role;
 	}
+	
 	
 }
