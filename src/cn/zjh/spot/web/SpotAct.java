@@ -96,6 +96,10 @@ public class SpotAct {
     public String goList(){
         return "/spotlist";
     }
+    @RequestMapping(value="/goBrowse")
+    public String goBrowse(){
+        return "/browse";
+    }
     @RequestMapping(value="/getCount",method=RequestMethod.POST)
     public void getCount(HttpServletResponse response){
         int c=0;

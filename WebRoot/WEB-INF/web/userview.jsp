@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div id="lsearch" class="box inner_c">
             <div class="serch-cen">
-                <iframe src="spot/goList" width="100%" height="100%" ></iframe>
+                <iframe src="spot/goBrowse" width="100%" height="95%" ></iframe>
             </div>
         </div>
         <div id="lfavour" class="box inner_c">

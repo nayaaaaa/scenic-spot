@@ -25,7 +25,6 @@ public class FileAct extends HttpServlet{
 		ServletContext application = request.getServletContext();
 		String rootPath = application.getRealPath("/");
 		PrintWriter out = response.getWriter();
-		System.out.println(rootPath);
-		out.write(new ActionEnter( request,rootPath).exec());
+		out.write(new ActionEnter( request,rootPath).exec() );
 	}
 }

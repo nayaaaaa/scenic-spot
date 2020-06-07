@@ -40,7 +40,7 @@ var s_name="",id="",title="";
 		  });
 	  }
 	  function editNews(id){
-		  parent.swNewTab("修改新闻信息","spot/goEdit?id="+id);
+		  parent.swNewTab("修改景点信息","spot/goEdit?id="+id);
 	  }
 	  function delNews(newsid,title0){
 		  id = newsid;

@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$("#logo").click(function(){
 			reDo();
 		});
-		setTimeout(reDo,6000);
+		setTimeout(reDo,4000);
 		function reDo(){top.location.href = "<%=basePath%>";}
 		</script>
   </body>
