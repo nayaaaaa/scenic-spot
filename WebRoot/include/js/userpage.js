@@ -3,45 +3,40 @@ $(function(){
     $("#lsearch").hide();
     $("#lfavour").hide();
 	mapinit();
-		$("#a").click(function(){
+	$("#a").click(function(){
 			$("#lmap").hide();
 			$("#ladd").show();
             $("#lsearch").hide();
             $("#lfavour").hide();
-        });
-        $("#b").click(function(){
+    });
+    $("#b").click(function(){
             $("#lmap").show();
             $("#ladd").hide();
             $("#lsearch").hide();
             $("#lfavour").hide();
-        });
-        $("#c").click(function(){
+    });
+    $("#c").click(function(){
             $("#lsearch").show();
             $("#lmap").hide();
             $("#ladd").hide();
             $("#lfavour").hide();
-        });
-        $("#d").click(function(){
+    });
+    $("#d").click(function(){
             $("#lfavour").show();
             $("#lmap").hide();
             $("#lsearch").hide();
             $("#ladd").hide();
-        });
-        $("#exit").click(function(){
+    });
+    $("#exit").click(function(){
             top.location.href="user/doLogout";
-        });
+	});
 });
+
 
 function mapinit(){
 		var map = new BMap.Map("container");
-		// 创建地图实例  
 		var point = new BMap.Point(108.952673,34.276549);
-		// 创建点坐标  
 		map.centerAndZoom(point,10);
-		// 初始化地图，设置中心点坐标和地图级别  
-		/*map.addEventListener("click",function(e){
-				alert(e.point.lng + "," + e.point.lat);
-			});*/
 		var opts1 = {anchor: BMAP_ANCHOR_BOTTOM_RIGHT}
 		var opts = {offset: new BMap.Size(1190, 5)}
 		map.addControl(new BMap.ScaleControl(opts1));
@@ -52,8 +47,7 @@ function mapinit(){
 			// 设置默认停靠位置和偏移量  
 			this.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;    
 			this.defaultOffset = new BMap.Size(10, 10);    
-		}    
-		// 通过JavaScript的prototype属性继承于BMap.Control   
+		}
 		ZoomControl.prototype = new BMap.Control();
 		ZoomControl.prototype.initialize = function(map){    
 			// 创建一个DOM元素   
@@ -76,16 +70,12 @@ function mapinit(){
 		var myZoomCtrl = new ZoomControl();    
 		// 添加到地图当中    
 		map.addControl(myZoomCtrl);
-
 		map.enableScrollWheelZoom();
-		var marker = new BMap.Marker(point);        // 创建标注    
-		map.addOverlay(marker); 
-		marker.setAnimation(BMAP_ANIMATION_BOUNCE); 
-		marker.enableDragging();
+
 		var opts3 = {    
-			width : 250,     // 信息窗口宽度    
-			height: 500,     // 信息窗口高度    
-			title : "窗口"  // 信息窗口标题   
+			width : 900,     // 信息窗口宽度    
+			height: 1100,     // 信息窗口高度    
+			title : "景点信息"  // 信息窗口标题   
 		};
 		function addClickHandler(content,marker){
 			marker.addEventListener("click",function(e){
@@ -115,8 +105,11 @@ function mapinit(){
 				for(var j=0;j<data_info.length;j++){
 					var marker = new BMap.Marker(new BMap.Point(data_info[j][0],data_info[j][1]));  // 创建标注
 					var content = data_info[j][2];
+					var title = data_info[j][3];
 					map.addOverlay(marker);               // 将标注添加到地图中
-					marker.setAnimation(BMAP_ANIMATION_BOUNCE); 
+					marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+					var label = new BMap.Label(title,{offset:new BMap.Size(20,-10)});
+					marker.setLabel(label);
 					addClickHandler(content,marker);
 				}	
 			},

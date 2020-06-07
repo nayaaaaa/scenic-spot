@@ -1,5 +1,7 @@
 package cn.zjh.spot.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -18,7 +20,15 @@ public class CommentSvc {
 		dao.addcomment(comment);
 	}
 	public void deleteComment(int id) throws Exception{
-		Comment u = (Comment)dao.getcomment(id);
+		Comment u = (Comment)dao.getid(id);
 		dao.delete(u);
 	}
+	public List<Comment> allComment(){
+		return dao.getall();
+	}
+	public List<Comment> alluser(String uid){
+		return dao.getuser(uid);
+	}
+
+
 }

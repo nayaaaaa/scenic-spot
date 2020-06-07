@@ -17,7 +17,7 @@
     select * from spot
 </select>
 <update id="update" parameterType="Spot">
-    update spot set title=#{title},content=#{content},cruser=#{cruser},hitnum=#{hitnum} where id=#{id}
+    update spot set title=#{title},content=#{content},cruser=#{cruser},positionx=#{positionx},positiony=#{positiony},city=#{city},district=#{district},adate=#{adate} where id=#{id}
 </update>
 <update id="uphitnum" parameterType="Spot">
     update spot set hitnum=#{hitnum} where id=#{id}

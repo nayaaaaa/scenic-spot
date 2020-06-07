@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-    <title>添加景点</title>
+    <title>管理员账号管理</title>
 	<link rel="shortcut icon" type="images/x-icon" href="<%=basePath%>include/img/travelB.png"/>
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>include/easyui/themes/gray/easyui.css"/>
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>include/easyui/themes/icon.css"/>
@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					return;
 				}else{
 					$.ajax({
-								url:base+"user/doAdjustuser",
+								url:"user/doAdjustuser",
 								data:{"uid":d,"pwd1":a,"pwd2":b},
 								type:"post",
 								success:function(res){

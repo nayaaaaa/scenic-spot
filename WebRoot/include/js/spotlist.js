@@ -2,7 +2,7 @@ var s_name="",id="",title="";
 	  function loadGrid(){
 		  s_name=$("#s_name").val();
 		  $("#dg").datagrid({
-			  width:800,height:500,nowrap:false,
+			  width:'98%',height:"96%",nowrap:false,
 			  striped:true,border:true,collapsible:false,
 			  url:"spot/listSpot",
 			  queryParams:{"s_name":s_name},
@@ -21,11 +21,11 @@ var s_name="",id="",title="";
 						  return (new Date(row.tjdate).format('Y-m-d H:i'));
 					  }},
 					  {
-						title:'更新时间',field:'update',width:100,formatter:function(value,row,index){
-							if(row.update == null){
+						title:'更新时间',field:'adate',width:100,formatter:function(value,row,index){
+							if(row.adate == null){
 								return '<span style="white-space:nowrap;">暂无更新</span>';
 							}else{
-								return (new Date(row.update).format('Y-m-d H:i'));
+								return (new Date(row.adate).format('Y-m-d H:i'));
 							}
 						}},
 				  {		

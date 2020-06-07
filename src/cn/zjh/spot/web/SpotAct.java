@@ -71,10 +71,15 @@ public class SpotAct {
     public void saveEdit(Spot spot,HttpServletResponse response){
         jsonobj.clear();
         try {
-            Spot spot0=spotSvc.getspot(spot.getId());
+            Spot spot0 = spotSvc.getspot(spot.getId());
             spot0.setContent(spot.getContent());
             spot0.setCruser(spot.getCruser());
             spot0.setTitle(spot.getTitle());
+            spot0.setPositionx(spot.getPositionx());
+            spot0.setPositiony(spot.getPositiony());
+            spot0.setCity(spot.getCity());
+            spot0.setDistrict(spot.getDistrict());
+            spot0.setAdate(new Date());
             spotSvc.updatespot(spot0);
             jsonobj.put("ok", true);
             jsonobj.put("msg", "goadmin");

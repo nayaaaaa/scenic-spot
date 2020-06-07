@@ -10,7 +10,7 @@ public class Spot {
     private String cruser;
     private Float positionx;
     private Float positiony;
-	private Date update;
+	private Date adate;
 	private Integer hitnum;
 	private String city;
 	private String district;
@@ -57,11 +57,11 @@ public class Spot {
 	public void setPositiony(Float positiony) {
 		this.positiony = positiony;
 	}
-	public Date getUpdate() {
-		return update;
+	public Date getAdate() {
+		return adate;
 	}
-	public void setUpdate(Date update) {
-		this.update = update;
+	public void setAdate(Date adate) {
+		this.adate = adate;
 	}
 	public Integer getHitnum() {
 		return hitnum;

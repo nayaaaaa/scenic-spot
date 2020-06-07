@@ -140,11 +140,11 @@ public class UserAct {
 	@RequestMapping(value="/doAdjustuser",method=RequestMethod.POST)
 	public void doAdjustuser(String uid,String pwd1,String pwd2,HttpSession session,HttpServletResponse response,Model model){
 		try{
-			User user = userSvc.sameID(uid);
-			String pwd0 = user.getPwd();
-			if(pwd1 == BaseUtil.lrwCode(pwd0,"")){
-				user.setPwd(BaseUtil.lrwCode(pwd2,""));
-				userSvc.updateU(user);
+			pwd1=BaseUtil.lrwCode(pwd1,"");
+			User user0 = userSvc.findU(uid,pwd1);
+			if(user0!=null){
+				user0.setPwd(BaseUtil.lrwCode(pwd2,""));
+				userSvc.updateU(user0);
 				jsonobj.clear();
 				jsonobj.put("ok",true);	
 				jsonobj.put("msg","密码修改成功~");
@@ -156,6 +156,27 @@ public class UserAct {
 		}catch(Exception e){
 			jsonobj.put("ok", false);
 			jsonobj.put("msg","不好意思，由于系统原因密码修改失败！");
+		}
+		BaseUtil.outPrint(response,BaseUtil.toJson(jsonobj));
+	}
+	@RequestMapping(value="/doAdjustname",method=RequestMethod.POST)
+	public void doAdjustuser(String uid,String name,HttpSession session,HttpServletResponse response,Model model){
+		try{
+			User user1 = userSvc.sameID(uid);
+			if(user1!=null){
+				user1.setName(name);
+				userSvc.updateU(user1);
+				jsonobj.clear();
+				jsonobj.put("ok",true);	
+				jsonobj.put("msg","昵称修改成功~");
+
+			}else{
+				jsonobj.put("ok", false);
+				jsonobj.put("msg","未找到账号信息！请联系管理员");
+			}
+		}catch(Exception e){
+			jsonobj.put("ok", false);
+			jsonobj.put("msg","不好意思，由于系统原因昵称修改失败！");
 		}
 		BaseUtil.outPrint(response,BaseUtil.toJson(jsonobj));
 	}

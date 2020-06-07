@@ -7,22 +7,63 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
-    <title>登录错误</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+	<base href="<%=basePath%>">
+	<title>错误页面</title>
+	<meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+    <link rel="shortcut icon" type="images/x-icon" href="<%=basePath%>include/img/travelB.png"/>
+	<script src="<%=basePath%>include/js/jquery.min.js" type="text/javascript"></script>
+	<style>
+		*{margin:0;padding:0}
+		html,code{
+			font:15px/22px arial,sans-serif}
+		html{
+			background:#fff;color:#222;
+			padding:15px}
+		body{margin:7% auto 0;
+			max-width:390px;
+			min-height:180px;
+			padding:30px 0 15px}* > body{
+			background: url(include/img/robot.png) 100% 5px no-repeat;
+			padding-right:205px
+		}
+		p{margin:11px 0 22px;
+			overflow:hidden}
+		ins{color:#777;
+			text-decoration:none}
+		a img{border:0}
+		@media screen and (max-width:772px){
+				body{
+					background:none;
+					margin-top:0;
+					max-width:none;
+					padding-right:0
+				}
+			}
+		#logo{
+			background:url(include/img/google.png) no-repeat;
+			margin-left:-5px
+		}
+		@media only screen and (min-resolution:192dpi){
+		#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;
+			-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}
+		@media only screen and (-webkit-min-device-pixel-ratio:2){
+		#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;
+			-webkit-background-size:100% 100%}}
+		#logo{display:inline-block;
+			height:54px;width:150px}
+	  </style>
   </head>
-  
+
   <body>
-    login fail！！ <br>
+	<span id=logo aria-label=Google></span>
+	<p><b id=index>404.</b> <ins>That’s an error.</ins>
+	<div><ins>你没有登录或者登录已超时！！！</ins></div>
+	<script type="text/javascript">
+		$("#logo").click(function(){
+			reDo();
+		});
+		setTimeout(reDo,6000);
+		function reDo(){top.location.href = "<%=basePath%>";}
+		</script>
   </body>
 </html>

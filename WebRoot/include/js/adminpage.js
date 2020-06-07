@@ -25,7 +25,7 @@ $(function(){
 	$("#logout").click(function(){
     	top.location.href="user/doLogout";
 	});
-	swNewTab('查询',"spot/goList");
+	swNewTab('查询景点',"spot/goList");
 });
 
 function closeAllTabs(){
@@ -36,7 +36,7 @@ function closeAllTabs(){
 }
 function swNewTab(newtitle,newurl){
     if($("#tabs").tabs('exists',newtitle))return;
-    closeAllTabs();
+    //closeAllTabs();
     $("#tabs").tabs('add',{
         title:newtitle,
         content:'<iframe id="mainframe" name="mainframe" scrolling="auto" height="99%" width="99%" frameboder="0" src="'+newurl+'"></iframe>',

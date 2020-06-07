@@ -53,8 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="easyui-linkbutton" id="cityset">市级名录</div>
 		<div class="easyui-linkbutton" id="districtset">区级名录</div>
 		<table id="dg" cellpadding="3"></table>
-			<div id="tb" style="padding:5px;">
-			</div>
+			<div id="tb" style="padding:5px;"></div>
     </div>
 	<script type="text/javascript">
 		$(function(){
@@ -69,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function loadGridcity(){
 			var c_name=$('#city').val();;
 			$("#dg").datagrid({
-				width:850,height:440,nowrap:false,
+				width:'98%',height:442,nowrap:false,
 				striped:true,border:true,collapsible:false,
 				url:"spot/getcity",
 				queryParams:{"c_name":c_name},
@@ -88,11 +87,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							return (new Date(row.tjdate).format('Y-m-d H:i'));
 						}},
 					{
-						title:'更新时间',field:'update',width:75,formatter:function(value,row,index){
-							if(row.update == null){
+						title:'更新时间',field:'adate',width:75,formatter:function(value,row,index){
+							if(row.adate == null){
 								return '<span style="white-space:nowrap;">暂无更新</span>';
 							}else{
-								return (new Date(row.update).format('Y-m-d H:i'));
+								return (new Date(row.adate).format('Y-m-d H:i'));
 							}
 					}},
 					{
@@ -117,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function loadGriddistrict(){
 			var d_name=$('#area').val();
 			$("#dg").datagrid({
-				width:800,height:450,nowrap:false,
+				width:'98%',height:442,nowrap:false,
 				striped:true,border:true,collapsible:false,
 				url:"spot/getdistrict",
 				queryParams:{"d_name":d_name},
@@ -136,11 +135,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							return (new Date(row.tjdate).format('Y-m-d H:i'));
 						}},
 					{
-						title:'更新时间',field:'update',width:75,formatter:function(value,row,index){
-							if(row.update == null){
+						title:'更新时间',field:'adate',width:75,formatter:function(value,row,index){
+							if(row.adate == null){
 								return '<span style="white-space:nowrap;">暂无更新</span>';
 							}else{
-								return (new Date(row.update).format('Y-m-d H:i'));
+								return (new Date(row.adate).format('Y-m-d H:i'));
 							}
 					}},
 					{
