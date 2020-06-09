@@ -9,7 +9,7 @@ var s_name="",id="",title="";
 			  pagination:true,
 			  rownumbers:true,
               fitColumns:true,
-              pageSize:20,
+              pageSize:30,
 			  loadMsg:'数据加载中...',
 			  columns:[[
 				  {

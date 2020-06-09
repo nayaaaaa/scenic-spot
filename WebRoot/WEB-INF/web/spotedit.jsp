@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</tr>
 				<tr>
 					<td>发布者：</td>
-					<td><input id="cruser" class="easyui-textbox" data-options="prompt:'发布人',required:true" style="width: 90%;height: 32px;"></td>
+					<td><input id="cruser" class="easyui-textbox" value="${me.name}" data-options="prompt:'发布人',required:true" style="width: 90%;height: 32px;"></td>
 				</tr>
 				<tr>
 					<td style="vertical-align:top;">文章内容：</td>

@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
 	<table id="dg" cellpadding="2"></table>
 	<div id="tb" style="padding:5px;">
-	 	<input type="text" id="s_name" class="easyui-textbox" data-options="prompt:'标题关键字...'" style="widows: 200px;height: 32px;">
+	 	<input type="text" id="s_name" class="easyui-textbox" data-options="prompt:'标题关键字...'" style="width: 200px;height: 32px;">
 	  	<div id="s_spot" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
 	</div>
   </body>

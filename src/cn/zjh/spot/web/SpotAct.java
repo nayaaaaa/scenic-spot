@@ -168,4 +168,8 @@ public class SpotAct {
         jsonResult = BaseUtil.toJson(jsonobj);
         BaseUtil.outPrint(response,jsonResult);
     }
+    @RequestMapping(value="/gomap")
+    public String gomap(){
+        return "/spotmap";
+    }
 }

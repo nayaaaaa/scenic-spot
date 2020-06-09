@@ -48,15 +48,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </style>
   </head>
   <body>
-	<select id="prov"></select>
-	<select id="city"></select>
-	<select id="area"></select>
-	<div class="easyui-linkbutton" id="cityset">市级名录</div>
-	<div class="easyui-linkbutton" id="districtset">区级名录</div>
     <table id="dg" cellpadding="2"></table>
 	<div id="tb" style="padding:5px;">
-	 	<input type="text" id="s_name" class="easyui-textbox" data-options="prompt:'标题关键字...'" style="width: 200px;height: 32px;">
-	  	<div id="s_spot" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+	 	<input type="text" id="s_name" class="easyui-textbox" data-options="prompt:'标题关键字...'" style="width: 100px;height: 32px;">
+	  	<div id="s_spot" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a></div>
+	  	<select id="prov"></select>
+		<select id="city"></select>
+		<select id="area"></select>
+		<div class="easyui-linkbutton" id="cityset">市级名录</div>
+		<div class="easyui-linkbutton" id="districtset">区级名录</div>
 	</div>
   </body>
 </html>
